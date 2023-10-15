@@ -28,7 +28,8 @@ struct DiaryView: View {
     // MARK: - View
     var body: some View {
         VStack(alignment: .leading) {
-            HStack { // 제목, 감정동그라미
+            // 제목, 감정동그라미
+            HStack {
                 Text(diary.title)
                     .font(.system(size: 18, weight: .semibold))
                 
@@ -39,15 +40,13 @@ struct DiaryView: View {
                     .foregroundColor(emotionColor)
             }
             
+            // 다이어리 내용
             Text(diary.detail)
                 .font(.system(size: 14))
         }
         .padding()
-        .overlay {
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(lineWidth: 1)
-                .foregroundColor(.black.opacity(0.8))
-        }
+        .background(.gray.opacity(0.1))
+        .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
 
