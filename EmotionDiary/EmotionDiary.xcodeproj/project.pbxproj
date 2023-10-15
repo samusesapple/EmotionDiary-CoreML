@@ -12,6 +12,8 @@
 		F17441CC2ADB807E00AED57E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F17441CB2ADB807E00AED57E /* Assets.xcassets */; };
 		F17441CF2ADB807E00AED57E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F17441CE2ADB807E00AED57E /* Preview Assets.xcassets */; };
 		F17441D82ADB837200AED57E /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17441D72ADB837200AED57E /* DiaryView.swift */; };
+		F17441DB2ADBE98700AED57E /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17441DA2ADBE98700AED57E /* Emotion.swift */; };
+		F17441DD2ADBE99000AED57E /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17441DC2ADBE99000AED57E /* Diary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		F17441CB2ADB807E00AED57E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F17441CE2ADB807E00AED57E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F17441D72ADB837200AED57E /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
+		F17441DA2ADBE98700AED57E /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
+		F17441DC2ADBE99000AED57E /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				F17441C72ADB807D00AED57E /* EmotionDiaryApp.swift */,
+				F17441D92ADBE97C00AED57E /* Models */,
 				F17441D62ADB834800AED57E /* Views */,
 				F17441CB2ADB807E00AED57E /* Assets.xcassets */,
 				F17441CD2ADB807E00AED57E /* Preview Content */,
@@ -84,6 +89,15 @@
 				F17441D52ADB834200AED57E /* Components */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F17441D92ADBE97C00AED57E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F17441DA2ADBE98700AED57E /* Emotion.swift */,
+				F17441DC2ADBE99000AED57E /* Diary.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,8 +171,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F17441CA2ADB807D00AED57E /* MainView.swift in Sources */,
+				F17441DD2ADBE99000AED57E /* Diary.swift in Sources */,
 				F17441C82ADB807D00AED57E /* EmotionDiaryApp.swift in Sources */,
 				F17441D82ADB837200AED57E /* DiaryView.swift in Sources */,
+				F17441DB2ADBE98700AED57E /* Emotion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,21 +7,11 @@
 
 import SwiftUI
 
-enum Emotion: Int {
-    case veryHappy = 2
-    case happy = 1
-    case soso = 0
-    case bad = -1
-    case veryBad = -2
-}
-
 struct DiaryView: View {
-    let title: String
-    let detail: String
-    let emotion: Emotion
+    let diary: Diary
     
     private var emotionColor: Color {
-        switch emotion {
+        switch diary.emotion {
         case .veryHappy:
             return Color.pink
         case .happy:
@@ -39,8 +29,8 @@ struct DiaryView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack { // 제목, 감정동그라미
-                Text(title)
-                    .font(.system(size: 16, weight: .semibold))
+                Text(diary.title)
+                    .font(.system(size: 18, weight: .semibold))
                 
                 Spacer()
                 
@@ -49,7 +39,7 @@ struct DiaryView: View {
                     .foregroundColor(emotionColor)
             }
             
-            Text(detail)
+            Text(diary.detail)
                 .font(.system(size: 14))
         }
         .padding()
@@ -63,8 +53,6 @@ struct DiaryView: View {
 
 struct DiaryView_Previews: PreviewProvider {
     static var previews: some View {
-        DiaryView(title: "일기 제목",
-                  detail: "일기에 들어간 내용",
-                  emotion: .soso)
+        DiaryView(diary: Diary.mockDiarys[0])
     }
 }

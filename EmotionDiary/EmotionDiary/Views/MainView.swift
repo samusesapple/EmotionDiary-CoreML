@@ -15,7 +15,7 @@ struct MainView: View {
         NavigationStack {
             VStack {
                 ScrollView {
-                    DiaryView(title: "일기1", detail: "일기내용1", emotion: .soso)
+                    DiaryView(diary: Diary.mockDiarys[3])
                 }
             }
             .navigationTitle("감정 일기")
