@@ -9,17 +9,21 @@ import SwiftUI
 
 struct MainView: View {
     
+    @State var diaryList: [Diary] = Diary.mockDiaries
+    @State var shouldAddNewDiary: Bool = false // 새로운 일기 추가 얼럿 띄우기 여부
     
     // MARK: - View
     var body: some View {
         NavigationStack {
             VStack {
-                ScrollView {
-                    DiaryView(diary: Diary.mockDiarys[3])
-                }
+                DiaryListView(diaryList: diaryList)
+                    .padding(.top)
+                Text("일기 \(diaryList.count)개")
+                    .font(.system(size: 14))
+                    .foregroundColor(Color.gray.opacity(0.9))
             }
-            .padding()
             .navigationTitle("감정 일기")
+            // 탭바
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink {

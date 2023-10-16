@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct Diary {
+struct Diary: Hashable {
     let title: String
     let detail: String
     let emotion: Emotion
     
     /// mock Diary lists를 가져오기 위한 계산속성
-    static var mockDiarys: [Diary] {
+    static var mockDiaries: [Diary] {
         var mockDiarys: [Diary] = []
         
         for num in 0...9 {

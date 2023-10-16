@@ -52,6 +52,6 @@ struct DiaryView: View {
 
 struct DiaryView_Previews: PreviewProvider {
     static var previews: some View {
-        DiaryView(diary: Diary.mockDiarys[0])
+        DiaryView(diary: Diary.mockDiaries[0])
     }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DDCFE3E42ADCD6370027096B /* DiaryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFE3E32ADCD6370027096B /* DiaryListView.swift */; };
+		DDCFE3E62ADCE5630027096B /* AddDiaryAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFE3E52ADCE5630027096B /* AddDiaryAlert.swift */; };
 		F17441C82ADB807D00AED57E /* EmotionDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17441C72ADB807D00AED57E /* EmotionDiaryApp.swift */; };
 		F17441CA2ADB807D00AED57E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17441C92ADB807D00AED57E /* MainView.swift */; };
 		F17441CC2ADB807E00AED57E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F17441CB2ADB807E00AED57E /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DDCFE3E32ADCD6370027096B /* DiaryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListView.swift; sourceTree = "<group>"; };
+		DDCFE3E52ADCE5630027096B /* AddDiaryAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryAlert.swift; sourceTree = "<group>"; };
 		F17441C42ADB807D00AED57E /* EmotionDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmotionDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17441C72ADB807D00AED57E /* EmotionDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionDiaryApp.swift; sourceTree = "<group>"; };
 		F17441C92ADB807D00AED57E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -74,19 +78,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		F17441D52ADB834200AED57E /* Components */ = {
+		F17441D52ADB834200AED57E /* DiaryList */ = {
 			isa = PBXGroup;
 			children = (
 				F17441D72ADB837200AED57E /* DiaryView.swift */,
+				DDCFE3E32ADCD6370027096B /* DiaryListView.swift */,
 			);
-			path = Components;
+			path = DiaryList;
 			sourceTree = "<group>";
 		};
 		F17441D62ADB834800AED57E /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				F17441C92ADB807D00AED57E /* MainView.swift */,
-				F17441D52ADB834200AED57E /* Components */,
+				DDCFE3E52ADCE5630027096B /* AddDiaryAlert.swift */,
+				F17441D52ADB834200AED57E /* DiaryList */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -174,6 +180,8 @@
 				F17441DD2ADBE99000AED57E /* Diary.swift in Sources */,
 				F17441C82ADB807D00AED57E /* EmotionDiaryApp.swift in Sources */,
 				F17441D82ADB837200AED57E /* DiaryView.swift in Sources */,
+				DDCFE3E42ADCD6370027096B /* DiaryListView.swift in Sources */,
+				DDCFE3E62ADCE5630027096B /* AddDiaryAlert.swift in Sources */,
 				F17441DB2ADBE98700AED57E /* Emotion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
