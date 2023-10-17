@@ -38,8 +38,8 @@ struct MainView: View {
                     }
                     
                     ToolbarItem(placement: .navigationBarLeading) {
-                        NavigationLink {
-                            Text("여태 쓴 일기의 감정 통계 보여주는 차트")
+                        Button {
+                            printTrainingData()
                         } label: {
                             Image(systemName: "chart.pie.fill")
                         }
@@ -58,6 +58,7 @@ struct MainView: View {
                 }
             }
         }
+
     }
 }
 

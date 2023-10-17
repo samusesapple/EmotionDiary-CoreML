@@ -9,22 +9,7 @@ import SwiftUI
 
 struct DiaryView: View {
     let diary: Diary
-    
-    private var emotionColor: Color {
-        switch diary.emotion {
-        case .veryHappy:
-            return Color.pink
-        case .happy:
-            return Color.purple
-        case .soso:
-            return Color.green
-        case .bad:
-            return Color.gray
-        case .veryBad:
-            return Color.black
-        }
-    }
-    
+
     // MARK: - View
     var body: some View {
         VStack(alignment: .leading) {
@@ -37,7 +22,7 @@ struct DiaryView: View {
                 
                 Circle() // 긍정, 부정 수치에 따라 변할 색
                     .frame(width: 18, height: 18)
-                    .foregroundColor(emotionColor)
+                    .foregroundColor(Emotion.getColor(diary.emotion))
             }
             
             // 다이어리 내용

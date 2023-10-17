@@ -60,6 +60,7 @@ struct AddDiaryAlert: View {
                 
                 // 일기 추가 버튼
                 Button {
+                    // TODO: - AI가 newDiary에 쓰여진 detail을 분석 결과를 활용하여 emotion을 변경 해야함
                     let newDiary = Diary(title: title,
                                          detail: detail,
                                          emotion: .soso)
