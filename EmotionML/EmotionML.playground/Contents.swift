@@ -22,13 +22,13 @@ do {
                                                             labelColumn: "label")
     
     // 학습 정확도 (1.0 - 학습 에러 발생 확률) * 100 -> 백분율
-    let trainingAccuracy = (1.0 - max(0.0, emotionClassifier.trainingMetrics.classificationError)) * 100
+    let trainingAccuracy = "\((1.0 - max(0.0, emotionClassifier.trainingMetrics.classificationError)) * 100)%"
     
     // 유효성 정확도 (1.0 - 유효성 에러 발생 확률) * 100 -> 백분율
-    let validationAccuracy = (1.0 - max(0.0, emotionClassifier.validationMetrics.classificationError)) * 100
+    let validationAccuracy = "\((1.0 - max(0.0, emotionClassifier.validationMetrics.classificationError)) * 100)%"
     
     // 평가 결과 정확도
-    let evaluationAccuracy = (1.0 - evaluationMetrics.classificationError) * 100
+    let evaluationAccuracy = "\((1.0 - evaluationMetrics.classificationError) * 100)%"
     
     print("""
     - 학습 정확도: \(trainingAccuracy)
