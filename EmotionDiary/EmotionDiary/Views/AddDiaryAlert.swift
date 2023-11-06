@@ -68,7 +68,7 @@ struct AddDiaryAlert: View {
                 Button {
                     // TODO: - AI가 newDiary에 쓰여진 detail을 분석 결과를 활용하여 emotion을 변경 해야함
                     let emotion = emotionClassifier?.predictedLabel(for: detail)
-                    
+            
                     let emotionResult: Emotion = emotion == "positive" ? .happy : .bad
                     print("emotion result: \(emotionResult)")
                     let newDiary = Diary(title: title,

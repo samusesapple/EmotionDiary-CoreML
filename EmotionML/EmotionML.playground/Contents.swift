@@ -19,7 +19,7 @@ do {
     // 3. 만든 emotionClassifier를 test 데이터로 측정하기
     let evaluationMetrics = try emotionClassifier.evaluation(on: testDataTable,
                                                             textColumn: "detail",
-                                                            labelColumn: "label")
+                                                             labelColumn: "label")
     
     // 학습 정확도 (1.0 - 학습 에러 발생 확률) * 100 -> 백분율
     let trainingAccuracy = "\((1.0 - max(0.0, emotionClassifier.trainingMetrics.classificationError)) * 100)%"
@@ -48,5 +48,6 @@ do {
                                 metadata: metadata)
 } catch {
     print(error.localizedDescription)
-}
+} 
 
+ 
