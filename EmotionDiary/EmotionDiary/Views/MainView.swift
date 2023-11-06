@@ -39,7 +39,7 @@ struct MainView: View {
                     
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button {
-                            printTrainingData()
+                            //
                         } label: {
                             Image(systemName: "chart.pie.fill")
                         }

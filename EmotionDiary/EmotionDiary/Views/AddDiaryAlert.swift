@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NaturalLanguage
 
 struct AddDiaryAlert: View {
     
@@ -15,6 +16,11 @@ struct AddDiaryAlert: View {
     @State var detail: String = ""
     
     var addDiaryButtonAction: ((Diary) -> Void)?
+    
+    private let emotionClassifier: NLModel? = {
+        let model = try? NLModel(mlModel: EmotionClassifier().model)
+        return model
+    }()
     
     // MARK: - View
     var body: some View {
@@ -61,15 +67,19 @@ struct AddDiaryAlert: View {
                 // 일기 추가 버튼
                 Button {
                     // TODO: - AI가 newDiary에 쓰여진 detail을 분석 결과를 활용하여 emotion을 변경 해야함
+                    let emotion = emotionClassifier?.predictedLabel(for: detail)
+                    
+                    let emotionResult: Emotion = emotion == "positive" ? .happy : .bad
+                    print("emotion result: \(emotionResult)")
                     let newDiary = Diary(title: title,
                                          detail: detail,
-                                         emotion: .soso)
+                                         emotion: emotionResult)
                     addDiaryButtonAction!(newDiary)
                 } label: {
                     Text("일기 추가")
                         .frame(width: 90, height: 38)
                         .foregroundColor(.white)
-                        .background(!title.isEmpty ? Color.blue : Color.gray.opacity(0.2)) // 제목 비어있는 여부에 따라 일기 추가 버튼 상태 색 설정
+                        .background(!title.isEmpty && !detail.isEmpty ? Color.blue : Color.gray.opacity(0.2)) // 제목과 내용이 비어있는 여부에 따라 일기 추가 버튼 상태 색 설정
                         .cornerRadius(10)
                 }
                 .disabled(title.isEmpty) // 제목이 비어있으면 일기 추가 버튼 disabled

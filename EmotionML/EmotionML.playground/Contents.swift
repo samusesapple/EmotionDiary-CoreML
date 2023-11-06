@@ -29,13 +29,23 @@ do {
     
     // 평가 결과 정확도
     let evaluationAccuracy = "\((1.0 - evaluationMetrics.classificationError) * 100)%"
-    
+
     print("""
     - 학습 정확도: \(trainingAccuracy)
     - 유효성 정확도: \(validationAccuracy)
     - 평가 결과 정확도: \(evaluationAccuracy)
     """)
 
+    // 원하는 경로에 MLModel 파일 저장하기
+    let mlModelFilePathURL = URL(fileURLWithPath: "/Users/hyunkwansung/Documents/GitHub/EmotionDiary-CoreML/EmotionML/EmotionClassifier.mlmodel")
+    
+    let metadata = MLModelMetadata(author: "samSung",
+                                     shortDescription: "this is emotion text classifier",
+                                     version: "1.0")
+    
+    // 만든 emotionClassifier로 지정한 filePath에 metadata를 넣어서 모델 만들기 + 저장하기
+    try emotionClassifier.write(to: mlModelFilePathURL,
+                                metadata: metadata)
 } catch {
     print(error.localizedDescription)
 }
