@@ -2,7 +2,7 @@
 //  AddDiaryAlert.swift
 //  EmotionDiary
 //
-//  Created by dev on 2023/10/16.
+//  Created by Sam Sung on 2023/10/16.
 //
 
 import SwiftUI

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9126EFE52AF8CE3500713C4E /* EmotionClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9126EFE42AF8CE3500713C4E /* EmotionClassifier.mlmodel */; };
+		914DAFBA2AFA2B3D009FB373 /* EmotionClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 914DAFB92AFA2B3D009FB373 /* EmotionClassifier.mlmodel */; };
 		DDCFE3E42ADCD6370027096B /* DiaryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFE3E32ADCD6370027096B /* DiaryListView.swift */; };
 		DDCFE3E62ADCE5630027096B /* AddDiaryAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFE3E52ADCE5630027096B /* AddDiaryAlert.swift */; };
 		F17441C82ADB807D00AED57E /* EmotionDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17441C72ADB807D00AED57E /* EmotionDiaryApp.swift */; };
@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9126EFE42AF8CE3500713C4E /* EmotionClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = EmotionClassifier.mlmodel; sourceTree = "<group>"; };
+		914DAFB92AFA2B3D009FB373 /* EmotionClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = EmotionClassifier.mlmodel; path = ../../../EmotionML/EmotionClassifier.mlmodel; sourceTree = "<group>"; };
 		DDCFE3E32ADCD6370027096B /* DiaryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListView.swift; sourceTree = "<group>"; };
 		DDCFE3E52ADCE5630027096B /* AddDiaryAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryAlert.swift; sourceTree = "<group>"; };
 		F17441C42ADB807D00AED57E /* EmotionDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmotionDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,7 +47,7 @@
 		DD29E02D2ADE2A7200700442 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				9126EFE42AF8CE3500713C4E /* EmotionClassifier.mlmodel */,
+				914DAFB92AFA2B3D009FB373 /* EmotionClassifier.mlmodel */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -188,7 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F17441CA2ADB807D00AED57E /* MainView.swift in Sources */,
-				9126EFE52AF8CE3500713C4E /* EmotionClassifier.mlmodel in Sources */,
+				914DAFBA2AFA2B3D009FB373 /* EmotionClassifier.mlmodel in Sources */,
 				F17441DD2ADBE99000AED57E /* Diary.swift in Sources */,
 				F17441C82ADB807D00AED57E /* EmotionDiaryApp.swift in Sources */,
 				F17441D82ADB837200AED57E /* DiaryView.swift in Sources */,
