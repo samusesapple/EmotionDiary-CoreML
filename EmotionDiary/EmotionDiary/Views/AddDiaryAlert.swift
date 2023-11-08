@@ -29,7 +29,7 @@ struct AddDiaryAlert: View {
             Color.black.opacity(0.75)
                 .edgesIgnoringSafeArea(.all)
             
-            VStack(alignment: .center) {
+            VStack(alignment: .center, spacing: 16) {
                 // 얼럿 상단
                 HStack {
                     Text("새로운 일기 쓰기")

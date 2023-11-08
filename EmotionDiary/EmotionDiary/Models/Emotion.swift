@@ -14,18 +14,18 @@ enum Emotion: Int, CaseIterable {
     case bad = -1
     case veryBad = -2
     
-    static func getColor(_ emotion: Emotion) -> Color {
+    static func getEmojiIcon(_ emotion: Emotion) -> Image {
         switch emotion {
         case .veryHappy:
-            return Color.pink
+            return Image("veryHappy")
         case .happy:
-            return Color.purple
+            return Image("happy")
         case .soso:
-            return Color.green
+            return Image("soso")
         case .bad:
-            return Color.gray
+            return Image("bad")
         case .veryBad:
-            return Color.black
+            return Image("veryBad")
         }
     }
 }

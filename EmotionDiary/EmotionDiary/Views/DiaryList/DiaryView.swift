@@ -20,9 +20,10 @@ struct DiaryView: View {
                 
                 Spacer()
                 
-                Circle() // 긍정, 부정 수치에 따라 변할 색
-                    .frame(width: 18, height: 18)
-                    .foregroundColor(Emotion.getColor(diary.emotion))
+                Emotion.getEmojiIcon(diary.emotion)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 22, height: 22)
             }
             
             // 다이어리 내용
