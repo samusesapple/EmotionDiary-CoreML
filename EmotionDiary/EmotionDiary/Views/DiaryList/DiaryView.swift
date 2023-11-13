@@ -20,7 +20,7 @@ struct DiaryView: View {
                 
                 Spacer()
                 
-                Emotion.getEmojiIcon(diary.emotion)
+                Emotion.switchEmotionIntoEmojiIcon(diary.emotion)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 22, height: 22)

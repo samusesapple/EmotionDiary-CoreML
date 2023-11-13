@@ -7,6 +7,7 @@
 
 import SwiftUI
 import NaturalLanguage
+import CoreML
 
 struct AddDiaryAlert: View {
     
@@ -17,9 +18,10 @@ struct AddDiaryAlert: View {
     
     var addDiaryButtonAction: ((Diary) -> Void)?
     
-    private let emotionClassifier: NLModel? = {
-        let model = try? NLModel(mlModel: EmotionClassifier().model)
-        return model
+    private let emotionPredictor: NLModel = {
+        let mlModel = try! EmotionClassifier(configuration: MLModelConfiguration()).model
+        let emotionPredictor = try! NLModel(mlModel: mlModel)
+        return emotionPredictor
     }()
     
     // MARK: - View
@@ -67,13 +69,13 @@ struct AddDiaryAlert: View {
                 // 일기 추가 버튼
                 Button {
                     // TODO: - AI가 newDiary에 쓰여진 detail을 분석 결과를 활용하여 emotion을 변경 해야함
-                    let emotion = emotionClassifier?.predictedLabel(for: detail)
-            
-                    let emotionResult: Emotion = emotion == "positive" ? .happy : .bad
-                    print("emotion result: \(emotionResult)")
+                    let resultRateDictionary = emotionPredictor.predictedLabelHypotheses(for: detail, maximumCount: 2)
+                    
+                    let diaryEmotion = Emotion.getEmotionWithData(resultRateDictionary)
+                    
                     let newDiary = Diary(title: title,
                                          detail: detail,
-                                         emotion: emotionResult)
+                                         emotion: diaryEmotion)
                     addDiaryButtonAction!(newDiary)
                 } label: {
                     Text("일기 추가")
