@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-enum Emotion: Int, CaseIterable {
-    case veryHappy = 2
-    case happy = 1
-    case soso = 0
-    case bad = -1
-    case veryBad = -2
+enum Emotion: CaseIterable {
+    case veryHappy
+    case happy
+    case soso
+    case bad
+    case veryBad
     
     static func getEmotionWithData(_ data: [String: Double]) -> Emotion {
         let positiveRate = data.filter { key, _ in
