@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import Charts
 
-enum Emotion: CaseIterable {
-    case veryHappy
-    case happy
-    case soso
-    case bad
-    case veryBad
+enum Emotion: String, CaseIterable, Plottable {
+    case veryHappy = "Very Happy"
+    case happy = "Happy"
+    case soso = "Normal"
+    case bad = "Bad"
+    case veryBad = "Very Bad"
     
     static func getEmotionWithData(_ data: [String: Double]) -> Emotion {
         let positiveRate = data.filter { key, _ in

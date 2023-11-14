@@ -38,11 +38,11 @@ struct MainView: View {
                     }
                     
                     ToolbarItem(placement: .navigationBarLeading) {
-                        Button {
-                            //
-                        } label: {
+                        NavigationLink(destination: {
+                            EmotionChartView(diaryList: $diaryList)
+                        }, label: {
                             Image(systemName: "chart.pie.fill")
-                        }
+                        })
                         .disabled(shouldAddNewDiary) // 얼럿 뜬 상태에서 버튼 비활성화 (사용자 액션 제어)
                     }
                 }
@@ -58,7 +58,7 @@ struct MainView: View {
                 }
             }
         }
-
+        
     }
 }
 
