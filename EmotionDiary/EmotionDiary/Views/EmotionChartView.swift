@@ -11,7 +11,7 @@ import Charts
 struct EmotionChartView: View {
     @Binding var diaryList: [Diary]
     
-    var sortedDiaryList: [Diary] {
+    private var sortedDiaryList: [Diary] {
         return diaryList.sorted {
             $0.emotion.localizationInt > $1.emotion.localizationInt
         }

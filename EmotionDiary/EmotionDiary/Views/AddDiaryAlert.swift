@@ -70,7 +70,7 @@ struct AddDiaryAlert: View {
                 Button {
                     let resultRateDictionary = emotionPredictor.predictedLabelHypotheses(for: detail, maximumCount: 2)
                     
-                    let diaryEmotion = Emotion.getEmotionWithData(resultRateDictionary)
+                    let diaryEmotion = EmotionClassifierService.getEmotionWithData(resultRateDictionary)
                     
                     let newDiary = Diary(title: title,
                                          detail: detail,
