@@ -11,20 +11,41 @@ import Charts
 struct EmotionChartView: View {
     @Binding var diaryList: [Diary]
     
-    private func getCertainEmotionDiaryList(get emotion: Emotion) -> [Diary] {
-        return diaryList.filter {
-            $0.emotion == emotion
+    var sortedDiaryList: [Diary] {
+        return diaryList.sorted {
+            $0.emotion.localizationInt > $1.emotion.localizationInt
         }
     }
     
     var body: some View {
-        Chart(diaryList, id: \.self) { diary in
+        if diaryList.isEmpty {
+            VStack {
+                Spacer()
+                
+                Text("통계를 보여줄 일기가 없습니다.\n\n일기를 먼저 작성해주세요.")
+                    .font(.title3)
+                    .bold()
+                    .multilineTextAlignment(.center)
+                
+                Spacer()
+            }
+        }
+        
+        Chart(sortedDiaryList, id: \.self) { diary in
             BarMark(
                 x: .value("Emotion", diary.emotion),
-                y: .value("Count", diaryList.count),
-                width: 20
+                y: .value("Count", 1),
+                width: 30
             )
+            .foregroundStyle(by: .value("Emotion", diary.emotion))
         }
+        .chartForegroundStyleScale([
+            "Very Good": .red,
+            "Good": .orange,
+            "Normal": .green,
+            "Bad": .blue,
+            "Very Bad": .purple
+        ])
         .padding()
     }
 }

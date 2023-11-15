@@ -33,6 +33,8 @@ struct MainView: View {
                             }
                         } label: {
                             Image(systemName: "plus")
+                                .foregroundStyle(.gray)
+                                .bold()
                         }
                         .disabled(shouldAddNewDiary) // 얼럿 뜬 상태에서 버튼 비활성화 (사용자 액션 제어)
                     }
@@ -41,7 +43,9 @@ struct MainView: View {
                         NavigationLink(destination: {
                             EmotionChartView(diaryList: $diaryList)
                         }, label: {
-                            Image(systemName: "chart.pie.fill")
+                            Image(systemName: "chart.bar.xaxis")
+                                .symbolRenderingMode(.monochrome)
+                                .foregroundStyle(.orange)
                         })
                         .disabled(shouldAddNewDiary) // 얼럿 뜬 상태에서 버튼 비활성화 (사용자 액션 제어)
                     }

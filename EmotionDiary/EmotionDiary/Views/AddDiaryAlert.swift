@@ -78,7 +78,7 @@ struct AddDiaryAlert: View {
                     
                     addDiaryButtonAction!(newDiary)
                 } label: {
-                    Text("일기 추가")
+                    Text("완료")
                         .frame(width: 90, height: 38)
                         .foregroundColor(.white)
                         .background(!title.isEmpty && !detail.isEmpty ? Color.blue : Color.gray.opacity(0.2)) // 제목과 내용이 비어있는 여부에 따라 일기 추가 버튼 상태 색 설정

@@ -9,11 +9,26 @@ import SwiftUI
 import Charts
 
 enum Emotion: String, CaseIterable, Plottable {
-    case veryHappy = "Very Happy"
-    case happy = "Happy"
+    case veryGood = "Very Good"
+    case good = "Good"
     case soso = "Normal"
     case bad = "Bad"
     case veryBad = "Very Bad"
+    
+    var localizationInt: Int {
+        switch self {
+        case .veryGood:
+            return 2
+        case .good:
+            return 1
+        case .soso:
+            return 0
+        case .bad:
+            return -1
+        case .veryBad:
+            return -2
+        }
+    }
     
     static func getEmotionWithData(_ data: [String: Double]) -> Emotion {
         let positiveRate = data.filter { key, _ in
@@ -35,9 +50,9 @@ enum Emotion: String, CaseIterable, Plottable {
     private static func getEmotionWithPositiveAndNegativeData(positiveRate: Double, negativeRate: Double) -> Emotion {
         switch positiveRate {
         case 0.8...1.0:
-            return .veryHappy
+            return .veryGood
         case 0.6..<0.8:
-            return .happy
+            return .good
         case 0.4..<0.6:
             return .soso
         case 0.2..<0.4:
@@ -49,9 +64,9 @@ enum Emotion: String, CaseIterable, Plottable {
     
     static func switchEmotionIntoEmojiIcon(_ emotion: Emotion) -> Image {
         switch emotion {
-        case .veryHappy:
+        case .veryGood:
             return Image("veryHappy")
-        case .happy:
+        case .good:
             return Image("happy")
         case .soso:
             return Image("soso")
