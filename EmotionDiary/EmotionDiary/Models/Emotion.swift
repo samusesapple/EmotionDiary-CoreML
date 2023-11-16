@@ -15,7 +15,7 @@ enum Emotion: String, CaseIterable, Plottable {
     case bad = "Bad"
     case veryBad = "Very Bad"
     
-    var localizationInt: Int {
+    var order: Int {
         switch self {
         case .veryGood:
             return 2

@@ -13,7 +13,7 @@ struct EmotionChartView: View {
     
     private var sortedDiaryList: [Diary] {
         return diaryList.sorted {
-            $0.emotion.localizationInt > $1.emotion.localizationInt
+            $0.emotion.order > $1.emotion.order
         }
     }
     
