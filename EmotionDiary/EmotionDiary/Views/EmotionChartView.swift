@@ -11,10 +11,8 @@ import Charts
 struct EmotionChartView: View {
     @Binding var diaryList: [Diary]
     
-    private var sortedDiaryList: [Diary] {
-        return diaryList.sorted {
-            $0.emotion.order > $1.emotion.order
-        }
+    private func getCertainEmotionDiaryCount(with emotion: Emotion) -> Int {
+        return diaryList.filter { $0.emotion == emotion }.count
     }
     
     var body: some View {
@@ -31,13 +29,13 @@ struct EmotionChartView: View {
             }
         }
         
-        Chart(sortedDiaryList, id: \.self) { diary in
+        Chart(Emotion.allCases, id: \.self) { emotion in
             BarMark(
-                x: .value("Emotion", diary.emotion),
-                y: .value("Count", 1),
+                x: .value("Emotion", emotion),
+                y: .value("Count", getCertainEmotionDiaryCount(with: emotion)),
                 width: 30
             )
-            .foregroundStyle(by: .value("Emotion", diary.emotion))
+            .foregroundStyle(by: .value("Emotion", emotion))
         }
         .chartForegroundStyleScale([
             "Very Good": .red,

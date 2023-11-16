@@ -25,6 +25,7 @@ struct Diary: Hashable {
                                  emotion: Emotion.allCases.randomElement()!)
             mockDiaries.append(newDiary)
         }
+        print(Emotion.allCases)
         return mockDiaries
     }
 }
